@@ -1,4 +1,4 @@
-const responseData = [
+const db = [
   {
     id: 1,
     firstName: 'Jason',
