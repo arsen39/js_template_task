@@ -43,6 +43,14 @@ function createPersonCard(person) {
   cardImage.addEventListener("error", handleImageError);
   cardImage.addEventListener("load", handleImageLoad);
 
+  const imageContainerText = createElement("p", {
+    classNames: ["image-container-text"],
+    onClick: null,
+    attributes: {},
+    datasets: {},
+  });
+  imageContainerText.append(document.createTextNode(`${person.firstName[0]}${person.lastName[0]}`))
+
   const imageContainer = createElement(
     "div",
     {
@@ -54,7 +62,7 @@ function createPersonCard(person) {
         fullName: `${person.firstName} ${person.lastName}`,
       },
     },
-    cardImage
+    cardImage, imageContainerText,
   );
 
   imageContainer.style.backgroundColor = stringToColour(

@@ -16,10 +16,24 @@
 }
 
 .image-container {
+  position: relative;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   height: 60%;
+}
+
+.image-container-text{
+  font-size: 5rem;
+  font-weight: 900;
+  color: white;
+
+  position: absolute;
+  top: 40%;
+  bottom: 60%;
+  left: 35%;
+  right: 65%;
+  z-index: 1;
 }
 
 .card-image {
@@ -28,6 +42,7 @@
   max-height: inherit;
   object-fit: cover;
   object-position: 50% 20%;
+  z-index: 2;
 }
 
 .card-name {
