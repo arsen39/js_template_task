@@ -2,8 +2,9 @@ const lorem =
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque nisi culpa, autem nemo nobis deleniti eos veritatis error itaque expedita facilis eligendi, at quasi architecto natus cupiditate facere rerum magni!";
 const container = document.getElementById("cards-container");
 
-const filtredDB = db.filter((person) => 
-  person.firstName !== "" && person.lastName !== "" && person.id !== ""
+const filtredDB = db.filter(
+  (person) =>
+    person.firstName !== "" && person.lastName !== "" && person.id !== ""
 );
 
 const cards = filtredDB.map((person) => createPersonCard(person));
@@ -49,7 +50,9 @@ function createPersonCard(person) {
     attributes: {},
     datasets: {},
   });
-  imageContainerText.append(document.createTextNode(`${person.firstName[0]}${person.lastName[0]}`))
+  imageContainerText.append(
+    document.createTextNode(`${person.firstName[0]}${person.lastName[0]}`)
+  );
 
   const imageContainer = createElement(
     "div",
@@ -62,7 +65,8 @@ function createPersonCard(person) {
         fullName: `${person.firstName} ${person.lastName}`,
       },
     },
-    cardImage, imageContainerText,
+    cardImage,
+    imageContainerText
   );
 
   imageContainer.style.backgroundColor = stringToColour(
@@ -133,9 +137,10 @@ function createContacts(person) {
     const socialNwLink = createElement("a", {
       classNames: ["social-nw-link"],
       onClick: null,
-      attributes: { href: link },
+      attributes: { href: link},
       datasets: {},
     });
+    socialNwLink.target="_blank"
     switch (hostLink) {
       case "www.facebook.com":
         socialNwLinkImg.setAttribute("alt", "Facebook icon");
