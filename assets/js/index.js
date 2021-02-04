@@ -1,8 +1,10 @@
 const container = document.getElementById("cards-container");
 
-fetch('http://192.168.1.148:3000/users')
-.then((res)=>res.json())
-.then((data)=>pageAppender(data))
+// fetch('http://192.168.1.148:3000/users')
+// .then((res)=>res.json())
+// .then((data)=>pageAppender(data))
+
+pageAppender(db);
 
 
 function pageAppender (data) {

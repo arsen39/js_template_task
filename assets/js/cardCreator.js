@@ -81,13 +81,17 @@ function createPersonCard(person) {
       classNames: ["card-container"],
       onClick: null,
       attributes: {},
-      datasets: {},
+      datasets: {isSelect: 1},
     },
     imageContainer,
     cardName,
     cardText,
     socialNwLinkContainer
   );
+  elem.addEventListener('mouseenter', cardHighlighter);
+  elem.addEventListener('mouseleave', cardHighlighterOff);
+  elem.addEventListener('click', cardSelector);
+  
 
   return elem;
 }
