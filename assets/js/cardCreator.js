@@ -80,7 +80,7 @@ function createPersonCard(person) {
     {
       classNames: ["card-container"],
       onClick: null,
-      attributes: {},
+      attributes: {id: `card${person.id}`},
       datasets: {isSelect: 1},
     },
     imageContainer,

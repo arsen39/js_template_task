@@ -3,6 +3,33 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.list-container {
+  width: 85vw;
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 20px;
+}
+
+.list-item {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.list-item-text {
+  font-size: 2rem;
+  font-weight: bold;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.list-item-btn{
+  font-size: 1rem 
+}
+
 .cards-container {
   display: flex;
   flex-flow: column nowrap;
@@ -110,6 +137,10 @@
 }
 
 @media screen and (min-width: 768px) {
+  .list-container {
+    width: 50vw;
+  }
+
   .card-container {
     max-width: 30vw;
   }
@@ -124,6 +155,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .list-container {
+    width: 30vw;
+  }
+
   .card-container {
     max-width: 24vw;
   }

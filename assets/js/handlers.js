@@ -22,15 +22,24 @@ function cardHighlighterOff ({currentTarget: o}) {
 const selectedDB = new Map ();
 
 function cardSelector ({currentTarget: o}) {
+  const {id} = o;
+  const {children : {1 :{textContent : fullName}}} = o;
   if (o.dataset.isSelect) {
     o.classList.add('card-selector');
     o.dataset.isSelect = '';
-    selectedDB.set (o.children[1].textContent,o);
+    selectedDB.set (id,fullName);
+    listAppender(selectedDB);
 
   } else {
     o.classList.remove('card-selector');
     o.dataset.isSelect = 1;
-    selectedDB.delete (o.children[1].textContent,o);
+    selectedDB.delete (id,fullName);
+    listAppender(selectedDB);
   }
+}
+
+function deselectBtnFunc ({currentTarget: o}) {
+  const {dataset: {cardId}} = o;
+  document.getElementById(cardId).dispatchEvent(new Event ('click'));
 }
 

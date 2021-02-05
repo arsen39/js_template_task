@@ -5,6 +5,7 @@ const container = document.getElementById("cards-container");
 // .then((data)=>pageAppender(data))
 
 pageAppender(db);
+listAppender(selectedDB);
 
 
 function pageAppender (data) {
